@@ -16,8 +16,10 @@ http.createServer((req, res) => {
     <h1>Users</h1>
     <h2>Path:  ${req.url}</h2>`);
   } else {
+    res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' })
     res.end(`
-    <h2>Path:  ${req.url}</h2>`);
+    <h2>Upss. This adress ${req.url} is not correct.</h2>`);
+
   }
 }).listen(port, '127.0.0.1', () => {
   console.log('Listening on ... ' + port);
