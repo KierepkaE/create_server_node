@@ -2,6 +2,8 @@ const http = require('http');
 const fs = require('fs');
 const port = process.env.PORT || 3000;
 const path = require('path');
+
+const users = [{ name: "Adam", id: 1 }, { name: 'Eva', id: 2 }];
 http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' })
   switch (req.url) {
@@ -18,7 +20,8 @@ http.createServer((req, res) => {
       });
       break;
     case '/api/users':
-      res.end('API path')
+      const usersJSON = JSON.stringify(users);
+      res.end(usersJSON);
       break;
     default:
       res.end('DEFAULT')
