@@ -20,8 +20,14 @@ http.createServer((req, res) => {
       });
       break;
     case '/api/users':
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
       const usersJSON = JSON.stringify(users);
       res.end(usersJSON);
+      break;
+    case '/code.js':
+      res.writeHead(200, { 'Content-Type': 'application/javascript; charset=utf-8' });
+      // const usersJSON = JSON.stringify(users);
+      res.end("console.log('this is my JS')");
       break;
     default:
       res.end('DEFAULT')
