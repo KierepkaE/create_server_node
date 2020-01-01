@@ -1,6 +1,6 @@
 # create_server_node
 
-- Figuring out how to create server in nodeJS.
+> Figuring out how to create server in nodeJS.
 
 #### How to use?
 
